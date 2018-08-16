@@ -1,0 +1,82 @@
+*
+header {
+    margin-top:1px; /*Simplemente agregamos un margen*/
+    width: 100%;
+    height: 150px; /*Le damos un alto fijo al menu*/
+    overflow: hidden; /*Agregamos un overflow hidden para que no se muestren elementos que sobrepasen los 150px de alto*/
+    position: relative; /*Convertimos el menu en posición relativa porque mas adelante en el header > nav pondremos una posición absoluta*/
+}
+
+nav {/*Menu*/
+    top:-20px; /*Le damos una separación superior*/
+    position: absolute; /*Convertimos el contenedor en posición absoluta*/
+    left:0; /*Con left:0; y right:0; centramos el contenedor*/
+    right:0;
+    margin:30px auto;
+    max-width:500px;
+    width:90%;
+}
+
+nav > ul {
+	display:table;
+	/*Quitamos el overflow hidden que estaba aqui*/
+	width:100%;
+	background: rgba(0, 0, 0, .8);
+	position:relative;
+}
+ 
+nav > ul li {
+	display:table-cell;
+}
+ 
+/*Sub-menu*/
+nav > ul > li:hover > ul {
+	display:block;
+	height:80%;
+}
+ 
+nav > ul > li > ul {
+	display:block;
+	position:absolute;
+	background: rgba(0, 0, 0, .8);
+	left:0;
+	right:0;
+	overflow:hidden;
+	height:0%;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+ 
+nav > ul li a {
+	position: relative;
+	text-decoration:none;
+}
+ 
+nav > ul > li > a span {
+	display:block;
+	height:100%;
+	width:100%;
+	left:0;
+	position:absolute;
+	top:-55px;
+}
+ 
+nav > ul > li > a:hover > span {
+	top:0;
+}
+ 
+/*Colores*/
+nav ul li a .primero {
+	background: rgba(55, 55, 238, .8);
+}
+ 
+nav ul li a .segundo {
+	background: rgba(9, 107, 24, .8);
+}
+ 
+nav ul li a .tercero {
+	background: rgba(196, 31, 12, .8);
+}
